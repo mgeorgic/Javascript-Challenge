@@ -33,3 +33,9 @@ button.on("click", () => {
 	console.log(filterCity)
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity);
 	console.log(filterData)
+
+	// Populate the filtered search into datatable
+	tbody.html("");
+
+	let response = {filterData, filterCity, filterDate}
+	
