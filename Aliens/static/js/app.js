@@ -39,7 +39,13 @@ button.on("click", () => {
 
 	let response = {filterData, filterCity, filterDate}
 	
-	if (response.filterData.length !==0) {
+	if (response.filterData.length !== 0) {
 		populate(filterCity) || populate(filterDate);}
 		
+		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0 || response.filterDate.length !== 0))) {
+			populate(filterCity) || populate(filterDate);}
 		
+		else {
+			tbody.append("tr").append("td").text("No UFO sightings in database...yet");}
+})			
+
