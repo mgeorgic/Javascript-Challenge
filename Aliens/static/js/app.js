@@ -39,3 +39,7 @@ button.on("click", () => {
 
 	let response = {filterData, filterCity, filterDate}
 	
+	if (response.filterData.length !==0) {
+		populate(filterCity) || populate(filterDate);}
+		
+		
