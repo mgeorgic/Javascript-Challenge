@@ -7,7 +7,7 @@ var button = d3.select("#filter-btn");
 var inputField1 = d3.select("#datetime");
 var inputField2 = d3.select("#city");
 var resetbtn = d3.select("#reset-btn");
-var columns = ["datetime", "city", "state", "country", "shape", "comments" ]
+var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
 
 // Populate the Data Table for columns names and rows
 var populate = (dataInput) => {
@@ -26,6 +26,7 @@ button.on("click", () => {
 	d3.event.preventDefault();
 	var inputDate = inputField1.property("value").trim();
 	var inputCity = inputField2.property("value").toLowerCase().trim();
+	
 	// Filter by field matching input value
 	var filterDate = data.filter(data => data.datetime === inputDate);
 	console.log(filterDate)
@@ -34,8 +35,8 @@ button.on("click", () => {
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity);
 	console.log(filterData)
 
-	// Populate the filtered search into datatable
-	tbody.html("");
+	// Populate the filtered search into data table
+	tbody.html('');
 
 	let response = {filterData, filterCity, filterDate}
 	
@@ -49,3 +50,8 @@ button.on("click", () => {
 			tbody.append("tr").append("td").text("No UFO sightings in database...yet");}
 })			
 
+resetbtn.on("click", () => {
+	tbody.html('');
+	populate(data)
+	console.log("Table reset")
+})
