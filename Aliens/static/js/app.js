@@ -26,25 +26,28 @@ button.on("click", () => {
 	d3.event.preventDefault();
 	var inputDate = inputField1.property("value").trim();
 	var inputCity = inputField2.property("value").toLowerCase().trim();
-	
+	var inputState = inputField3.property("value").toLowerCase().trim();
+
 	// Filter by field matching input value
 	var filterDate = data.filter(data => data.datetime === inputDate);
 	console.log(filterDate)
 	var filterCity = data.filter(data => data.city === inputCity);
 	console.log(filterCity)
-	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity);
+	var filterState = data.filter(data => data.state === inputState);
+	console.log(filterState)
+	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity && data.state ===inputState);
 	console.log(filterData)
 
 	// Populate the filtered search into data table
 	tbody.html('');
 
-	let response = {filterData, filterCity, filterDate}
+	let response = {filterData, filterCity, filterState, filterDate}
 	
 	if (response.filterData.length !== 0) {
-		populate(filterCity) || populate(filterDate);}
+		populate(filterCity) || populate(filterDate) || populate(filterState);}
 		
-		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0 || response.filterDate.length !== 0))) {
-			populate(filterCity) || populate(filterDate);}
+		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0 || response.filterDate.length !== 0 || response.filterState.length !== 0))) {
+			populate(filterCity) || populate(filterDate) || populate(filterState);}
 		
 		else {
 			tbody.append("tr").append("td").text("No UFO sightings in database...yet");}

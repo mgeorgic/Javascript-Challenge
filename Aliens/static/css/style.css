@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Ubuntu, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif, 'Arial Narrow Bold';
 }
 
 html,
@@ -8,6 +8,10 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+.table-head {
+  color:darkcyan"
 }
 
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
@@ -120,6 +124,12 @@ select {
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
 }
+
+.hero text-center {
+  text-color: darkcyan;
+  text-shadow: lightskyblue;
+  font-style:oblique;
+}  
 
 /* input placeholder color changes */
 .form-control::-webkit-input-placeholder {
