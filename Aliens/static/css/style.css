@@ -106,6 +106,8 @@ select {
 
 .hero h1 {
   margin-top: 200px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: #054785;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
 }
@@ -113,6 +115,8 @@ select {
 .hero p {
   font-size: 2rem;
   opacity: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: #054785;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
 }
