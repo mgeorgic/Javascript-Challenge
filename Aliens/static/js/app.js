@@ -32,13 +32,9 @@ button.on("click", () => {
 
 	// Filter by field matching input value
 	var filterDate = data.filter(data => data.datetime === inputDate);
-	//console.log(filterDate)
 	var filterCity = data.filter(data => data.city === inputCity);
-	//console.log(filterCity)
 	var filterState = data.filter(data => data.state === inputState);
-	//console.log(filterState)
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity && data.state ===inputState);
-	//console.log(filterData);
 	var filterDateCity = data.filter(data => data.city === inputCity && data.datetime == inputDate);
 	var filterDateState = data.filter(data => data.datetime === inputDate && data.state ===inputState);
 	var filterCityState = data.filter(data => data.city === inputCity && data.state ===inputState);
