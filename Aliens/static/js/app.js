@@ -42,12 +42,12 @@ button.on("click", () => {
 	// Populate the filtered search into data table
 	tbody.html('');
 
-	let response = {filterData, filterCity, filterState, filterDate}
+	let response = {filterData, filterCity, filterState, filterDate,filterDateCity, filterDateState, filterCityState}
 	
 	if (response.filterData.length !== 0) {populate(filterData);}
-		else if (response.filterDate.length !==0) {populate(filterDate);}
-		else if (response.filterCity.length !==0) {populate(filterCity);}
-		else if (response.filterState.length !==0) {populate(filterState);}
+		//else if (response.filterDate.length !==0) {populate(filterDate);}
+		//else if (response.filterCity.length !==0) {populate(filterCity);}
+		//else if (response.filterState.length !==0) {populate(filterState);}
 		else if (response.filterDateCity.length !==0) {populate(filterDateCity);}
 		else if (response.filterDateState.length !== 0) {populate(filterDateState);}
 		else if (response.filterCityState.length !== 0) {populate(filterCityState);}
