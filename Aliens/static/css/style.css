@@ -47,13 +47,17 @@ body {
   margin: 0;
 }
 
+.navbar-brand {
+  background-color:limegreen;
+  
+}
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: absolute;
   bottom: 5px;
   left: 150px;
   width: 35px;
-  color: white;
+  color:aquamarine;
 }
 
 /* Adding styles to the aside and filter form */
