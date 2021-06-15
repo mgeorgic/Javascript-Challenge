@@ -32,13 +32,13 @@ button.on("click", () => {
 
 	// Filter by field matching input value
 	var filterDate = data.filter(data => data.datetime === inputDate);
-	console.log(filterDate)
+	//console.log(filterDate)
 	var filterCity = data.filter(data => data.city === inputCity);
-	console.log(filterCity)
+	//console.log(filterCity)
 	var filterState = data.filter(data => data.state === inputState);
-	console.log(filterState)
+	//console.log(filterState)
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity && data.state ===inputState);
-	console.log(filterData);
+	//console.log(filterData);
 	var filterDateCity = data.filter(data => data.city === inputCity && data.datetime == inputDate);
 	var filterDateState = data.filter(data => data.datetime === inputDate && data.state ===inputState);
 	var filterCityState = data.filter(data => data.city === inputCity && data.state ===inputState);
@@ -48,17 +48,15 @@ button.on("click", () => {
 
 	let response = {filterData, filterCity, filterState, filterDate}
 	
-	if (response.filterData.length !== 0) {
-		populate(filterCity) || populate(filterDate) || populate(filterState);}
-		
-		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0))) {
-			populate(filterDate) && populate(filterState);}
-		
-		else if (response.filterData.length === 0 && ((response.filterDate.length !== 0))) {
-			populate(filterCity) || populate(filterState);}
-		
-		else if (response.filterData.length === 0 && ((response.filterState.length !== 0))) {
-				populate(filterCity) || populate(filterDate);}
+	if (response.filterData.length !== 0) {populate(filterData);}
+		else if (response.filterDate.length !==0) {populate(filterDate);}
+		else if (response.filterCity.length !==0) {populate(filterCity);}
+		else if (response.filterState.length !==0) {populate(filterState);}
+		else if (response.filterDateCity.length !==0) {populate(filterDateCity);}
+		else if (response.filterDateState.length !== 0) {populate(filterDateState);}
+		else if (response.filterCityState.length !== 0) {populate(filterCityState);}
+		else if (response.filterDate.length !== 0 || response.filterCity.length !== 0 || response.filterState.length !== 0) {
+			populate(filterState) || populate(filterCity) || populate(filterDate);}
 		else {
 			tbody.append("tr").append("td").text("No UFO sightings in database...yet");}
 })			
