@@ -38,8 +38,11 @@ button.on("click", () => {
 	var filterState = data.filter(data => data.state === inputState);
 	console.log(filterState)
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity && data.state ===inputState);
-	console.log(filterData)
-
+	console.log(filterData);
+	var filterDateCity = data.filter(data => data.city === inputCity && data.datetime == inputDate);
+	var filterDateState = data.filter(data => data.datetime === inputDate && data.state ===inputState);
+	var filterCityState = data.filter(data => data.city === inputCity && data.state ===inputState);
+	
 	// Populate the filtered search into data table
 	tbody.html('');
 
@@ -48,9 +51,14 @@ button.on("click", () => {
 	if (response.filterData.length !== 0) {
 		populate(filterCity) || populate(filterDate) || populate(filterState);}
 		
-		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0 || response.filterDate.length !== 0 || response.filterState.length !== 0))) {
-			populate(filterCity) || populate(filterDate) || populate(filterState);}
+		else if (response.filterData.length === 0 && ((response.filterCity.length !== 0))) {
+			populate(filterDate) && populate(filterState);}
 		
+		else if (response.filterData.length === 0 && ((response.filterDate.length !== 0))) {
+			populate(filterCity) || populate(filterState);}
+		
+		else if (response.filterData.length === 0 && ((response.filterState.length !== 0))) {
+				populate(filterCity) || populate(filterDate);}
 		else {
 			tbody.append("tr").append("td").text("No UFO sightings in database...yet");}
 })			
