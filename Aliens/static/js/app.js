@@ -6,6 +6,7 @@ var tbody = d3.select("tbody");
 var button = d3.select("#filter-btn");
 var inputField1 = d3.select("#datetime");
 var inputField2 = d3.select("#city");
+var inputField3 = d3.select("#state");
 var resetbtn = d3.select("#reset-btn");
 var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
 
@@ -14,14 +15,15 @@ var populate = (dataInput) => {
 
 	dataInput.forEach(ufo_sightings => {
 		var row = tbody.append("tr");
-		columns.forEach(column => row.append("td").text(ufo_sightings[column])
-		)
+		columns.forEach(column => row.append("td").text(ufo_sightings[column]))
 	});
 }
 
 populate(data)
 
 // Filter by date and city
+// Create event handler and prevents automatic refresh
+// Fetch the value of the input
 button.on("click", () => {
 	d3.event.preventDefault();
 	var inputDate = inputField1.property("value").trim();
