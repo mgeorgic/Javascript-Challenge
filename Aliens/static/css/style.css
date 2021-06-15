@@ -57,7 +57,7 @@ body {
   bottom: 5px;
   left: 150px;
   width: 35px;
-  color:aquamarine;
+  color:limegreen;
 }
 
 /* Adding styles to the aside and filter form */
@@ -77,7 +77,7 @@ select {
   display: block;
   width: 100%;
   padding: 8px;
-  color: #8e979f;
+  color: #00ff22;
   outline: none;
 }
 
@@ -205,7 +205,7 @@ select {
   }
 
   .hero h1 {
-    animation: smaller-title 1.2s forwards linear;
+    animation: smaller-title 2s forwards linear;
   }
 }
 
